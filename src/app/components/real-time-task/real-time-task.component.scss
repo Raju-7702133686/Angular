@@ -1,0 +1,31 @@
+.form {
+  max-width: 600px;
+  background-color: #fff;
+  margin: auto;
+  padding: 20px;
+  border-radius: 8px;
+}
+.password {
+  position: relative;
+}
+.password i {
+  position: absolute;
+  top: 35px;
+  right: 20px;
+  cursor: pointer;
+}
+.confirm-password {
+  position: relative;
+}
+.confirm-password i {
+  position: absolute;
+  top: 35px;
+  right: 20px;
+  cursor: pointer;
+}
+.submit:hover {
+  box-shadow: 10px 10px 8px purple;
+}
+.restart:hover {
+  box-shadow: 8px 8px 10px lightcoral;
+}

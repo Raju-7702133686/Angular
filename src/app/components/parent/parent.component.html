@@ -1,0 +1,51 @@
+<app-child></app-child>
+<div class="row">
+  <div class="col-md-3">
+    <select
+      name=""
+      id=""
+      class="form-select"
+      (change)="updateDistricts($event)"
+    >
+      <option value="">Select</option>
+      <option value="{{ s['id'] }}" *ngFor="let s of states">
+        {{ s["name"] }}
+      </option>
+    </select>
+  </div>
+  <div class="col-md-3">
+    <select name="" id="" class="form-select">
+      <option value="">Select</option>
+      <option value="{{ d['id'] }}" *ngFor="let d of filterDistricts">
+        {{ d["name"] }}
+      </option>
+    </select>
+  </div>
+</div>
+<div class="dropdown d-flex">
+  <button
+    data-mdb-button-init
+    data-mdb-ripple-init
+    data-mdb-dropdown-init
+    class="btn btn-primary dropdown-toggle "
+    type="button"
+    id="dropdownMenuButton"
+    data-mdb-toggle="dropdown"
+    aria-expanded="false"
+  >
+    Dropdown button
+  </button>
+
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <li><a class="dropdown-item" href="#">Action</a></li>
+    <li><a class="dropdown-item" href="#">Another action</a></li>
+    <li><a class="dropdown-item" href="#">Something else here</a></li>
+    <li><a class="dropdown-item" href="#">Action</a></li>
+    <li><a class="dropdown-item" href="#">Another action</a></li>
+    <li><a class="dropdown-item" href="#">Something else here</a></li>
+  </ul>
+
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+
+  </ul>
+</div>

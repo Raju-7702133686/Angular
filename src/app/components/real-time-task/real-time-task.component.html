@@ -1,0 +1,69 @@
+<div class="form mt-4">
+    <form action="" [formGroup]="regForm" class="form" (ngSubmit)="submit()"> 
+        <h1 class="text-info">Forms using Reactive foms</h1>
+        <div class="form-group">
+            <label for=""> First Name</label>
+            <input type="text" class="form-control" formControlName="firstName">
+            <div class="text-danger" *ngIf="regForm.get('firstName')?. invalid && regForm.get('firstName')?. touched || submitted && regForm.get('firstName')?.invalid" >
+                <div *ngIf="regForm.get('firstName')?.errors?.['required']">This field is required
+                </div>
+                <div *ngIf="regForm.get('firstName')?.errors?.['minlength']">Minimum 3 characters required</div>
+                <div *ngIf="regForm.get('firstName')?.errors?.['maxlength']"> maximum 15 characters only</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="">Last Name</label>
+            <input type="text" class="form-control" formControlName="lastName">
+            <div class="text-danger" *ngIf="regForm.get('lastName')?. invalid && regForm.get('lastName')?. touched || submitted && regForm.get('lastName')?.invalid" >
+                <div *ngIf="regForm.get('lastName')?.errors?.['required']">This field is required
+                </div>
+                <div *ngIf="regForm.get('lastName')?.errors?.['minlength']">Minimum 3 characters required</div>
+                <div *ngIf="regForm.get('lastName')?.errors?.['maxlength']"> maximum 15 characters only</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="">Age</label>
+            <input type="number" class="form-control" formControlName="age">
+        </div>
+        <div class="form-group">
+            <label for="">Date of Birth</label>
+            <input type="date" class="form-control" formControlName="dob">
+        </div>
+        <div class="form-group">
+            <label for="">Email</label>
+            <input type="email" class="form-control" formControlName="email">
+            <div class="text-danger" *ngIf="regForm.get('email')?. invalid && regForm.get('email')?. touched || submitted && regForm.get('email')?. invalid">
+                <div *ngIf="regForm.get('email')?.errors?.['required']">This field is required</div>
+                <div *ngIf="regForm.get('email')?.errors?.['email']">Invalid Email</div>
+            </div>
+        </div>
+        <div class="form-group password">
+            <label for="">Password</label>
+            <input [type]="!showPassword? 'text' :'password'" class="form-control" formControlName="password">
+            <i class="fa-regular fa-eye" (click)="toggleShow()" *ngIf="showPassword"></i>
+            <i class="fa-regular fa-eye-slash" (click)="toggleShow()" *ngIf="!showPassword"> </i>
+            <div class="text-danger" *ngIf="regForm.get('password')?. invalid && regForm.get('password')?. touched || submitted && regForm.get('password')?. invalid">
+                <div *ngIf="regForm.get('password')?.errors?.['required']">This field is required
+
+                </div>
+
+            </div>
+        
+        </div>
+        <div class="form-group confirm-password">
+            <label for=""> Confim Password</label>
+            <input [type]="!showConfirmPassword?'text': 'password'" class="form-control" formControlName="confirmPassword">
+            <i class="fa-regular fa-eye" *ngIf="showConfirmPassword" (click)="toggleShow1()"></i>
+            <i class="fa-regular fa-eye-slash" *ngIf="!showConfirmPassword" (click)="toggleShow1()"></i>
+            <div class="text-danger" *ngIf="regForm.get('confirmPassword')?. invalid && regForm.get('confirmPassword')?. touched || submitted && regForm.get('confirmPassword')?.invalid" >
+                <div *ngIf="regForm.get('confirmPassword')?.errors?.['required']">This field is required
+                </div>
+                <div *ngIf="regForm.get('confirmPassword')?.errors?.['pattern']">Please enter valid confirmPassword</div>
+            </div>
+        </div>
+        <div class="mt-4 d-flex justify-content-between">
+            <button type="submit" class="btn btn-primary submit" [disabled]="!regForm.invalid">Sumbit</button>
+            <button class="btn btn-warning restart" type="button" (click)="reset()">Restart</button>
+        </div>
+    </form>
+</div>

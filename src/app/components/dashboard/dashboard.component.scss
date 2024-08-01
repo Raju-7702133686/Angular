@@ -1,0 +1,36 @@
+.main{
+    height: 100vh;
+    width: 100vw;
+}
+.left{
+    // background-color: skyblue;
+    background: var(--UI-Buttons-Button, linear-gradient(91deg, #395FC0 0%, lightgray 100%));
+    height: 100% !important;
+    width: 25%;
+}
+.right{
+    // background-color: aqua;
+    background: var(--UI-Buttons-Button, linear-gradient(91deg, #395FC0 0%, lightblue 100%));
+    width: 75%;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    font-size: 2rem;
+    color: #fff;
+    display: block;
+    text-align: center;
+
+}
+a:hover{
+    background-color: rgb(252, 211, 107);
+    color: black;
+    display: block ;
+}
+.active{
+    background-color: #da4141;
+    border-bottom: 1px solid blueviolet;
+    color: #fff;
+}

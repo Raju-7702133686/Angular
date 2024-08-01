@@ -1,1 +1,46 @@
-<p>dashboard works!</p>
+<div class="container-fluid d-flex main">
+  <div class="left">
+    <h1 class="text-center">Website</h1>
+
+    <a
+      class="text-center"
+      href=""
+      routerLink="parent"
+      routerLink="parent" routerLinkActive="active" 
+      >Parent</a
+    >
+    <a
+      class="text-center"
+      href=""
+      routerLink="child" routerLinkActive="active" 
+      >Child</a
+    >
+    <a
+      class="text-center"
+      href=""
+      routerLink="dom-manipulation" routerLinkActive="active" 
+      >Dom-Manupulation</a
+    >
+    <a
+    class="text-center"
+    href=""
+    routerLink="loading" routerLinkActive="active" 
+    >Loading..</a
+  >
+  <a
+  class="text-center"
+  href=""
+  routerLink="real-time-task" routerLinkActive="active" 
+  >Real Time Task</a
+>
+<a
+class="text-center"
+href=""
+routerLink="popup" routerLinkActive="active" 
+>Popup</a
+>
+  </div>
+  <div class="right container">
+    <router-outlet></router-outlet>
+  </div>
+</div>
